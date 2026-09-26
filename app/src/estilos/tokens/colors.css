@@ -1,0 +1,26 @@
+:root{
+/* Paleta base. Es el patio a media tarde: tierra pisada, sombra de árbol y
+   ladrillo. No hay verde saturado, porque el pasto de un patio con perros
+   nunca es verde de catálogo y la marca no miente sobre eso. */
+--arena-50:#FCFAF6;--arena-100:#F5F0E7;--arena-200:#EBE3D6;--arena-300:#D8CCB8;--arena-400:#B5A78F;
+--corteza-900:#241A12;--corteza-700:#3D2E21;--corteza-500:#5C4835;--corteza-300:#6E5A46;
+--noche-900:#0F0C08;--noche-800:#15110C;--noche-700:#1E1811;--noche-500:#2C2319;--noche-400:#3D3122;
+--ladrillo-100:#F7E3DA;--ladrillo-300:#E09274;--ladrillo-500:#A8462A;--ladrillo-700:#8A371F;--ladrillo-900:#2E140C;
+--pasto-100:#DCEBD8;--pasto-300:#74B06A;--pasto-500:#3A6B2F;--pasto-900:#17280F;
+--vino-100:#F6DDE5;--vino-300:#DD7E9C;--vino-500:#9B1B42;--vino-900:#2E0A16;
+--blanco:#FFFFFF;
+/* Papeles */
+--bg-page:light-dark(var(--arena-100),var(--noche-800));--bg-raised:light-dark(var(--arena-50),var(--noche-700));--bg-sunken:light-dark(var(--arena-200),var(--noche-900));--bg-inverse:light-dark(var(--corteza-900),var(--arena-100));
+--surface-card:light-dark(var(--blanco),var(--noche-700));--surface-overlay:light-dark(rgba(36,26,18,.56),rgba(0,0,0,.68));
+/* Tintas */
+--fg-1:light-dark(var(--corteza-900),var(--arena-100));--fg-2:light-dark(var(--corteza-500),var(--arena-300));--fg-3:light-dark(var(--corteza-300),var(--arena-400));--fg-inverse:light-dark(var(--arena-50),var(--corteza-900));--fg-on-accent:light-dark(var(--blanco),var(--noche-900));
+/* Acento */
+--accent:light-dark(var(--ladrillo-500),var(--ladrillo-300));--accent-hover:light-dark(var(--ladrillo-700),var(--ladrillo-100));--accent-press:light-dark(var(--ladrillo-700),var(--ladrillo-100));--accent-soft:light-dark(var(--ladrillo-100),var(--ladrillo-900));
+/* Bordes y foco */
+--border-1:light-dark(var(--arena-300),var(--noche-500));--border-2:light-dark(var(--arena-400),var(--noche-400));--border-strong:light-dark(var(--corteza-900),var(--arena-100));--focus-ring:light-dark(var(--ladrillo-500),var(--ladrillo-300));--focus-halo:light-dark(var(--ladrillo-100),var(--ladrillo-900));
+/* Estados */
+--success:light-dark(var(--pasto-500),var(--pasto-300));--success-soft:light-dark(var(--pasto-100),var(--pasto-900));--danger:light-dark(var(--vino-500),var(--vino-300));--danger-soft:light-dark(var(--vino-100),var(--vino-900));
+/* Motivo. El portón es el isotipo: el patio visto desde arriba, con la
+   entrada abierta. Usa la tinta del sistema y no un color propio. */
+--porton-tinta:light-dark(var(--corteza-900),var(--arena-100));--porton-fondo:light-dark(var(--ladrillo-100),var(--ladrillo-900));--filete:light-dark(var(--arena-300),var(--noche-500));
+}

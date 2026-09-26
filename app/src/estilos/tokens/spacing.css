@@ -1,0 +1,10 @@
+:root{
+/* La escala nace de 4 px y no admite valores sueltos. Un margen de 13 px es
+   siempre un error de alguien apurado, nunca una decisión. */
+--sp-1:4px;--sp-2:8px;--sp-3:12px;--sp-4:16px;--sp-5:20px;--sp-6:24px;--sp-8:32px;--sp-10:40px;--sp-12:48px;--sp-16:64px;--sp-20:80px;--sp-24:96px;
+--radio-s:6px;--radio-m:10px;--radio-l:16px;--radio-full:999px;
+--ancho-texto:68ch;--ancho-contenido:1080px;--ancho-manual:760px;
+/* El área mínima de un blanco táctil. No es estética: bajo esto la gente
+   falla el toque y vuelve a intentar. */
+--toque-minimo:44px;
+}

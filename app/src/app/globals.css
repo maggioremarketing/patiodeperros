@@ -1,0 +1,126 @@
+@import "../estilos/tokens/base.css";
+@import "../estilos/tokens/colors.css";
+@import "../estilos/tokens/typography.css";
+@import "../estilos/tokens/spacing.css";
+
+:root{color-scheme:light dark}
+:root[data-tema="claro"]{color-scheme:light}
+:root[data-tema="oscuro"]{color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--bg-page);
+  color:var(--fg-1);
+  font-family:var(--font-body);
+  font-size:var(--fs-body);
+  line-height:var(--lh-body);
+  font-weight:var(--fw-regular);
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0;line-height:var(--lh-heading);letter-spacing:var(--ls-heading);font-weight:var(--fw-semibold)}
+p{margin:0}
+a{color:var(--accent);text-underline-offset:.2em}
+a:hover{color:var(--accent-hover)}
+:focus-visible{outline:var(--borde-2) solid var(--focus-ring);outline-offset:2px;border-radius:var(--radio-s)}
+
+/* La prosa larga no parte palabras. Un texto guionado se lee como un error de
+   composición, y acá lo que se está comunicando es cuidado. */
+.justificado{hyphens:none;max-width:var(--ancho-texto)}
+
+.sobretitulo{
+  font-size:var(--fs-caption);
+  letter-spacing:var(--ls-overline);
+  text-transform:uppercase;
+  font-weight:var(--fw-semibold);
+  color:var(--fg-3);
+}
+
+/* El blanco táctil. No es estética: quien está dejando a su perro tiene una
+   mano ocupada con la correa. */
+.toque{min-height:var(--toque-minimo);min-width:var(--toque-minimo);display:inline-flex;align-items:center;justify-content:center}
+
+.boton{
+  min-height:var(--toque-minimo);
+  padding:var(--sp-3) var(--sp-6);
+  display:inline-flex;align-items:center;gap:var(--sp-2);
+  background:var(--accent);color:var(--fg-on-accent);
+  border:none;border-radius:var(--radio-m);
+  font:inherit;font-weight:var(--fw-semibold);
+  text-decoration:none;cursor:pointer;
+  transition:background var(--transicion);
+}
+.boton:hover{background:var(--accent-hover);color:var(--fg-on-accent)}
+.boton--calado{background:transparent;color:var(--fg-1);border:var(--borde-1) solid var(--border-2)}
+.boton--calado:hover{background:var(--bg-sunken);color:var(--fg-1)}
+
+/* El motivo: la muesca del portón, en el borde de una superficie. */
+.porton-corte{
+  border:var(--borde-1) solid var(--border-1);
+  border-radius:var(--radio-l);
+  background:var(--surface-card);
+  clip-path:polygon(0 0,100% 0,100% 62%,calc(100% - 14px) 74%,100% 86%,100% 100%,0 100%);
+}
+
+.filete{border:0;border-top:var(--borde-1) solid var(--filete);margin:var(--sp-12) 0}
+.envoltura{max-width:var(--ancho-contenido);margin:0 auto;padding:0 var(--sp-6)}
+
+/* ── Piezas de composición ──────────────────────────────────────────────────
+   Viven acá y no en un estilo en línea porque necesitan consultas de medio, y
+   un estilo en línea no puede tenerlas. La regla de fondo es la misma que con
+   los tokens: si la pantalla angosta depende de que alguien se acuerde, se
+   rompe. */
+
+.barra{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:var(--sp-3);flex-wrap:wrap;
+  padding:var(--sp-4) var(--sp-6);
+}
+
+/* Un enlace de texto que igual tiene que poder tocarse. El alto mínimo va en
+   el enlace y no en su contenedor, porque lo que el dedo busca es el enlace. */
+.enlace-toque{display:inline-flex;align-items:center;min-height:var(--toque-minimo)}
+
+.manual{
+  display:grid;gap:var(--sp-8);
+  grid-template-columns:minmax(0,1fr);
+  align-items:start;
+  padding:var(--sp-10) var(--sp-6);
+}
+@media (min-width:900px){
+  .manual{grid-template-columns:230px minmax(0,1fr);gap:var(--sp-12);padding:var(--sp-12) var(--sp-6)}
+  .manual-indice{position:sticky;top:var(--sp-20);max-height:calc(100vh - var(--sp-24));overflow-y:auto}
+}
+
+.manual-indice{display:grid;gap:var(--sp-5);font-size:var(--fs-body-s)}
+.manual-indice ul{list-style:none;margin:0;padding:0;display:grid;gap:var(--sp-1)}
+.manual-indice a{
+  display:flex;align-items:center;
+  min-height:var(--toque-minimo);
+  padding:var(--sp-1) var(--sp-2);
+  margin-left:calc(var(--sp-2) * -1);
+  border-radius:var(--radio-s);
+  color:var(--fg-2);text-decoration:none;
+}
+.manual-indice a:hover{background:var(--bg-sunken);color:var(--fg-1)}
+.manual-indice a[data-falta="si"]{color:var(--fg-3)}
+@media (min-width:900px){
+  .manual-indice a{min-height:32px}
+}
+
+/* `min-width:0` no es un parche: un elemento de grilla tiene `min-width:auto`
+   por omisión, así que una tabla ancha lo estira por dentro y el desborde
+   aparece en el teléfono y no en el computador de quien lo escribió. Con esto
+   la tabla se hace scroll dentro de su envoltura, que es lo que se quería. */
+.manual-cuerpo{min-width:0;display:grid;gap:var(--sp-16);max-width:var(--ancho-manual)}
+.tabla-envoltura{min-width:0;overflow-x:auto}
+
+/* La misma trampa de `min-width:auto`, una capa más abajo: cada criterio es
+   una grilla y basta con que una muestra sea ancha para estirar la columna
+   entera del manual. */
+.manual-cuerpo section,.manual-cuerpo section>*,.manual-cuerpo>div,.manual-cuerpo>div>*{min-width:0}
+
+/* Las muestras de marca no se achican para caber en el teléfono: una muestra
+   achicada deja de mostrar el tamaño que dice mostrar. Se desplazan. */
+.muestra{min-width:0;overflow-x:auto;padding:var(--sp-8);background:var(--bg-sunken);border-radius:var(--radio-l)}

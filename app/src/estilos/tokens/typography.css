@@ -1,0 +1,18 @@
+:root{
+/* Una sola familia, y esa es la decisión.
+   Plantas con Palabra usa dos porque el logotipo tiene que leerse como la
+   tarjeta impresa. Acá no hay tarjeta: hay un portón, un patio y un cartel.
+   Un lugar se señaliza, y la señalética no cambia de tipografía entre el
+   cartel y el folleto. La familia llega desde next/font, que le pone su
+   propia variable, y nadie más escribe su nombre. */
+--font-display:var(--fuente-unica),system-ui,-apple-system,sans-serif;
+--font-body:var(--fuente-unica),system-ui,-apple-system,sans-serif;
+/* No es una familia de marca. Existe para imprimir valores en columna dentro
+   del manual y no aparece en ninguna pieza. */
+--font-mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+--fw-regular:400;/* @kind font */--fw-medium:500;/* @kind font */--fw-semibold:600;/* @kind font */--fw-bold:700;/* @kind font */
+--fs-display-l:56px;--fs-display-m:44px;--fs-h1:36px;--fs-h2:28px;--fs-h3:22px;--fs-h4:18px;
+--fs-body-l:18px;--fs-body:16px;--fs-body-s:14px;--fs-caption:12px;
+--lh-tight:1.0;/* @kind font */--lh-snug:1.14;/* @kind font */--lh-heading:1.2;/* @kind font */--lh-body:1.5;/* @kind font */--lh-loose:1.65;/* @kind font */
+--ls-display:-0.02em;/* @kind font */--ls-heading:-0.012em;/* @kind font */--ls-body:0;/* @kind font */--ls-overline:0.14em;/* @kind font */
+}

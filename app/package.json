@@ -1,0 +1,25 @@
+{
+  "name": "patio-de-perros",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "verificar": "node pruebas/verificar.mjs",
+    "accesibilidad": "node pruebas/accesibilidad.mjs",
+    "avance": "node --experimental-strip-types --no-warnings pruebas/avance.ts",
+    "romper": "node pruebas/romper.mjs"
+  },
+  "dependencies": {
+    "next": "16.3.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "playwright": "^1.49.0",
+    "typescript": "^5"
+  }
+}
