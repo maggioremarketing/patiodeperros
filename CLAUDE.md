@@ -9,10 +9,6 @@ Comparten casa, familia, razón social y método. No comparten identidad, y eso
 es una decisión, no un descuido: ver `src/lib/criterios.ts`, criterio
 «La razón social y las dos marcas».
 
-> El repositorio se llama `vidadeperros` porque así se llamaba el proyecto
-> antes de que el nombre se cerrara. La marca es Patio de Perros. Renombrar el
-> repositorio es una tarea pendiente y no urgente.
-
 ## Qué hay construido
 
 Una app Next.js en `app/` con dos rutas:
