@@ -81,8 +81,35 @@ No las reabras sin que te lo pidan.
 - **Objetivos del manual**: falta la cifra, y sin cifra no es objetivo.
 - **Marca no presentada en INAPI.** Por lo descriptivo del nombre hay que
   presentarla como marca mixta, en clases 43 y 44.
-- **Despliegue**: `patiodeperros.cl` está registrado en Hostinger con DNS en
-  parking. Falta apuntarlo a Vercel.
+- **DNS**: el sitio ya despliega en Vercel desde `main`, pero
+  `patiodeperros.cl` sigue apuntando al parking de Hostinger. Los registros
+  que faltan están en «Despliegue», más abajo.
+
+> **Antes de apuntar el DNS**, arregla el número de WhatsApp. El dominio real
+> con los diez enlaces del sitio mandando a un número que no existe es peor
+> que no tener sitio.
+
+## Despliegue
+
+Proyecto de Vercel **`patio-de-perros`** en el equipo `maggiore`, enlazado a
+este repositorio con `rootDirectory` en `app/`.
+
+- Rama de producción: **`main`**. Lo que se mergea ahí se publica solo.
+  Cualquier otra rama genera una vista previa.
+- Hoy vive en `https://patio-de-perros.vercel.app`.
+- Dominios ya declarados en el proyecto: `patiodeperros.cl` y
+  `www.patiodeperros.cl`, este último con redirección 308 al apex.
+
+Lo único que falta es el DNS, que se cambia en Hostinger. Son los mismos dos
+registros que ya funcionan en la marca hermana:
+
+| Tipo  | Nombre | Valor                  |
+|-------|--------|------------------------|
+| A     | `@`    | `76.76.21.21`          |
+| CNAME | `www`  | `cname.vercel-dns.com` |
+
+Hay que borrar antes los registros del parking de Hostinger, que hoy resuelven
+el apex a `2.57.91.91`.
 
 ## Lo que este repositorio no decide
 
